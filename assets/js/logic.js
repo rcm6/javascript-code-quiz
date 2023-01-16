@@ -1,5 +1,6 @@
 //test print questions array to console
 console.log(questions)
+console.log (document.getElementById("time"))
 
 
 // Add event listener to start button
@@ -7,7 +8,32 @@ document.getElementById("start").addEventListener("click", startQuiz);
 
 function startQuiz() {
     console.log("Hello World");
+    // start timer
+    setTime();
   }
+
+//Variables
+var secondsLeft = 15;
+
+// Timer Function
+function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      document.getElementById("time").textContent = secondsLeft;
+  
+      if(secondsLeft === 0) {
+        //when time = 0 end game
+        clearInterval(timerInterval);
+        //calls endGame Function
+        //endgame();
+        console.log("endgame");
+
+      }
+  
+    }, 1000);
+  }
+
 /*
 
 Psuedocode 
@@ -21,25 +47,6 @@ penality = 10; - this can be in the timer function
 
 questionsArr  - this is stored within the questions.js file  
 
-
-1. We need a list of questions to be displayed on the page: these questions should be stored in the questions.js file.  We should "export" this array so that we can get access to it within our logic.js file. 
-
-    1.1 These questions should be stored within an array of objects. 
-    1.2 These objects should contain properties to store the buttons
-        
-        - describe the object 
-
-        [
-            {
-                question: 'What data types can an array store ?',
-                choices: ['string', 'numbers', 'objects', 'all of them' ],
-                answer: 'all of them', 
-                correct: false,
-                answered: false
-            }, 
-
-            // multiple object questions 
-        ]
 
 2. logic file:  
 
@@ -69,7 +76,7 @@ questionsArr  - this is stored within the questions.js file
     
     3. game start function: 
     
-         - Add an event listener to the start button
+         - Add an event listener to the start button - DONE
             
             - Game will start with a question and timer will start - this means to invoke the timer function and the renderQuestions function
             

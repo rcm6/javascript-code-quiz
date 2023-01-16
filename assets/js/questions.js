@@ -1,27 +1,27 @@
 //array for questions and answers
 var questions = [
     {
-      question: "what:",
+      ask: "what:",
       choices: ["steak", "pizza", "chips", "cake"],
       answer: "cake",
     },
     {
-      question: "why",
+      ask: "why",
       choices: ["because", "why not", "well", "shrug"],
       answer: "because",
     },
     {
-      question: "when",
+      ask: "when",
       choices: ["now", "then", "never", "all of the above",],
       answer: "all of the above",
     },
     {
-      question: "where",
+      ask: "where",
       choices: ["home", "away", "left", "right"],
       answer: "right",
     },
     {
-      question: "who",
+      ask: "who",
       choices: ["me", "you", "they", "it"],
       answer: "they",
     },
@@ -31,10 +31,18 @@ var questions = [
 
 
   function askQuestions() {
-console.log ("askQuestions")
+console.log ("askQuestions");
 
 var currentQuestion = questions[currentQuestionIndex];
 console.log (currentQuestion);
+console.log (currentQuestion.ask);
+
+
+//variable to store questions layout
+var quizContent = "<h2> Question " + (currentQuestionIndex +1) + "</h2><p>" + (currentQuestion.ask) + "</p>";
+
+// quiz content
+document.getElementById("start-screen").innerHTML = quizContent;
 
 
 

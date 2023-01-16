@@ -2,7 +2,7 @@
 console.log(questions)
 
 
-// Attach event listener to increment button element
+// Add event listener to start button
 document.getElementById("start").addEventListener("click", startQuiz);
 
 function startQuiz() {

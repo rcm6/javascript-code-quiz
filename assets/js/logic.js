@@ -1,3 +1,13 @@
+//test print questions array to console
+console.log(questions)
+
+
+// Attach event listener to increment button element
+document.getElementById("start").addEventListener("click", startQuiz);
+
+function startQuiz() {
+    console.log("Hello World");
+  }
 /*
 
 Psuedocode 

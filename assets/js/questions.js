@@ -1,3 +1,4 @@
+//array for questions and answers
 var questions = [
     {
       question: "what:",

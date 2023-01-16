@@ -14,19 +14,20 @@ function startQuiz() {
   }
 
 //Variables
-//var secondsLeft = 15;
+var secondsLeft = 60;
+var score = 0;
 
 // Timer Function
 function setTime() {
     //timer length variable
-    var secondsLeft = 15;
+    secondsLeft = 60;
     // Sets interval in variable
     var timerInterval = setInterval(function() {
       secondsLeft--;
       document.getElementById("time").textContent = secondsLeft;
   
-      if(secondsLeft === 0) {
-        //when time = 0 end game
+      if(secondsLeft === 0 || secondsLeft < 0 ) {
+        //when time = 0 or is less than 0 end game
         clearInterval(timerInterval);
         //calls endGame Function
         //endgame();
@@ -37,7 +38,28 @@ function setTime() {
     }, 1000);
   }
 
+//correct answer function
+function correct() {
+    score += 15;
+    //ask next question
+    currentQuestionIndex++;
+    askQuestions();
+  }
+  
+  //wrong answer function
+  function incorrect() {
+    secondsLeft -= 10;
+    //ask next question
+    currentQuestionIndex++;
+    askQuestions();
+  }
+
+//endgame function
+
+
 /*
+
+
 
 Psuedocode 
 

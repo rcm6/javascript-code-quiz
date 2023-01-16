@@ -26,3 +26,16 @@ var questions = [
       answer: "they",
     },
   ];
+
+  var currentQuestionIndex = 0;
+
+
+  function askQuestions() {
+console.log ("askQuestions")
+
+var currentQuestion = questions[currentQuestionIndex];
+console.log (currentQuestion);
+
+
+
+}

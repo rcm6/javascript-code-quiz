@@ -10,6 +10,7 @@ function startQuiz() {
     console.log("Hello World");
     // start timer
     setTime();
+    askQuestions();
   }
 
 //Variables
@@ -17,6 +18,7 @@ function startQuiz() {
 
 // Timer Function
 function setTime() {
+    //timer length variable
     var secondsLeft = 15;
     // Sets interval in variable
     var timerInterval = setInterval(function() {

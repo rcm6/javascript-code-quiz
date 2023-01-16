@@ -29,6 +29,7 @@ var questions = [
 
 var currentQuestionIndex = 0;
 //var currentQuestion = questions[currentQuestionIndex];
+var correctornot = "";
 
 function askQuestions() {
   console.log("askQuestions");
@@ -45,6 +46,7 @@ function askQuestions() {
     "</h2><p>" +
     currentQuestion.ask +
     "</p>";
+  var correctIncorrect = '<p id="test">' + correctornot + "</p>";
 
   //choices loop
   for (
@@ -64,6 +66,9 @@ function askQuestions() {
     }
     questionsContent += buttonCode;
   }
+
+  //holder for incorrect/correct
+  questionsContent += correctIncorrect;
 
   // update questions content on screen
   document.getElementById("start-screen").innerHTML = questionsContent;

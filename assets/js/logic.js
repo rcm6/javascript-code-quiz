@@ -1,17 +1,16 @@
 //test print questions array to console
-console.log(questions)
-console.log (document.getElementById("time"))
-
+console.log(questions);
+console.log(document.getElementById("time"));
 
 // Add event listener to start button
 document.getElementById("start").addEventListener("click", startQuiz);
 
 function startQuiz() {
-    console.log("Hello World");
-    // start timer
-    setTime();
-    askQuestions();
-  }
+  console.log("Hello World");
+  // start timer
+  setTime();
+  askQuestions();
+}
 
 //Variables
 var secondsLeft = 60;
@@ -19,43 +18,47 @@ var score = 0;
 
 // Timer Function
 function setTime() {
-    //timer length variable
-    secondsLeft = 60;
-    // Sets interval in variable
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      document.getElementById("time").textContent = secondsLeft;
-  
-      if(secondsLeft === 0 || secondsLeft < 0 ) {
-        //when time = 0 or is less than 0 end game
-        clearInterval(timerInterval);
-        //calls endGame Function
-        //endgame();
-        console.log("endgame");
+  //timer length variable
+  secondsLeft = 60;
+  // Sets interval in variable
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    document.getElementById("time").textContent = secondsLeft;
 
-      }
-  
-    }, 1000);
-  }
+    if (secondsLeft === 0 || secondsLeft < 0) {
+      //when time = 0 or is less than 0 end game
+      clearInterval(timerInterval);
+      //calls endGame Function
+      //endgame();
+      console.log("endgame");
+    }
+  }, 1000);
+}
 
 //correct answer function
 function correct() {
-    score += 15;
-    //ask next question
-    currentQuestionIndex++;
-    askQuestions();
-  }
+  score += 15;
+//print correct
+correctornot = "correct";
   
-  //wrong answer function
-  function incorrect() {
-    secondsLeft -= 10;
-    //ask next question
-    currentQuestionIndex++;
-    askQuestions();
-  }
+//ask next question
+
+  currentQuestionIndex++;
+  askQuestions();
+}
+
+//wrong answer function
+function incorrect() {
+  secondsLeft -= 10;
+  //print incorrect
+  correctornot = "incorrect";
+
+  //ask next question
+  currentQuestionIndex++;
+  askQuestions();
+}
 
 //endgame function
-
 
 /*
 

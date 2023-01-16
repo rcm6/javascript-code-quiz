@@ -13,10 +13,11 @@ function startQuiz() {
   }
 
 //Variables
-var secondsLeft = 15;
+//var secondsLeft = 15;
 
 // Timer Function
 function setTime() {
+    var secondsLeft = 15;
     // Sets interval in variable
     var timerInterval = setInterval(function() {
       secondsLeft--;

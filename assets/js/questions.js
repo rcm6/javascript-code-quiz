@@ -1,44 +1,45 @@
 //array for questions and answers
 var questions = [
   {
-    ask: "what:",
-    choices: ["steak", "pizza", "chips", "cake"],
-    answer: "cake",
+    question: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts",
   },
   {
-    ask: "why",
-    choices: ["because", "why not", "well", "shrug"],
-    answer: "because",
+    question: "The condition in an if / else statement is enclosed within ____",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "parentheses",
   },
   {
-    ask: "when",
-    choices: ["now", "then", "never", "all of the above"],
+    question: "Arrays in JavaScript can be used to store ____",
+    choices: [
+      "numbers and strings",
+      "other arrays",
+      "booleans",
+      "all of the above",
+    ],
     answer: "all of the above",
   },
   {
-    ask: "where",
-    choices: ["home", "away", "left", "right"],
-    answer: "right",
+    question:
+      "String values must be enclosed within ____ when being assigned to variables",
+    choices: ["commas", "curly brackets", "quotes", "parentheses"],
+    answer: "quotes",
   },
   {
-    ask: "who",
-    choices: ["me", "you", "they", "it"],
-    answer: "they",
+    question:
+      "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
+    answer: "console.log",
   },
 ];
 
+//set variables
 var currentQuestionIndex = 0;
-var currentQuestion = questions[currentQuestionIndex];
-var correctornot = "";
 
 //function to ask questions
 function askQuestions() {
-  console.log("askQuestions");
-
   var currentQuestion = questions[currentQuestionIndex];
-  console.log(currentQuestion);
-  console.log(currentQuestion.ask);
-  console.log(currentQuestion.choices.length);
 
   //variable to store questions content
   var buttonquestions = "";
@@ -68,9 +69,9 @@ function askQuestions() {
   document.getElementById("questions").setAttribute("class", "unhide");
   //show feedback div
   document.getElementById("feedback").setAttribute("class", "unhide");
-  //write question title and write question
+  //write question
   document.getElementById("question-title").textContent =
-    currentQuestionIndex + 1 + currentQuestion.ask;
+    currentQuestion.question;
   //write button code
   document.getElementById("choices").innerHTML = buttonquestions;
   console.log("score: " + score);

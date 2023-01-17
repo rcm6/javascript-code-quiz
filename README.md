@@ -11,8 +11,8 @@ This application features dynamically generated HTML and CSS.
 ![Project Screenshot](/08-web-apis-challenge-demo.gif?raw=true)
 
 ## Link
-[https://rcm6.github.io/javascript-code-quiz/](https://rcm6.github.io/javascript-code-quiz/
-
+[https://rcm6.github.io/javascript-code-quiz
+](https://rcm6.github.io/javascript-code-quiz)
 ## Installation
 N/A
 

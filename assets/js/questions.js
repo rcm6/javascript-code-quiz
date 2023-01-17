@@ -74,5 +74,4 @@ function askQuestions() {
     currentQuestion.question;
   //write button code
   document.getElementById("choices").innerHTML = buttonquestions;
-  console.log("score: " + score);
 }

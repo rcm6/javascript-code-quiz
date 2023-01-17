@@ -28,9 +28,10 @@ var questions = [
 ];
 
 var currentQuestionIndex = 0;
-//var currentQuestion = questions[currentQuestionIndex];
+var currentQuestion = questions[currentQuestionIndex];
 var correctornot = "";
 
+//function to ask questions
 function askQuestions() {
   console.log("askQuestions");
 
@@ -40,14 +41,7 @@ function askQuestions() {
   console.log(currentQuestion.choices.length);
 
   //variable to store questions content
-  var questionsContent =
-    "<h2> Question " +
-    (currentQuestionIndex + 1) +
-    "</h2><p>" +
-    currentQuestion.ask +
-    "</p>";
-  var correctIncorrect = '<p id="test">' + correctornot + "</p>";
-
+  var buttonquestions = "";
   //choices loop
   for (
     var choicesLoop = 0;
@@ -64,12 +58,20 @@ function askQuestions() {
     } else {
       buttonCode = buttonCode.replace("[answer]", "incorrect()");
     }
-    questionsContent += buttonCode;
+    buttonquestions += buttonCode;
   }
 
-  //holder for incorrect/correct
-  questionsContent += correctIncorrect;
-
   // update questions content on screen
-  document.getElementById("start-screen").innerHTML = questionsContent;
+  //hide start-screen div
+  document.getElementById("start-screen").setAttribute("class", "hide");
+  //show questions div
+  document.getElementById("questions").setAttribute("class", "unhide");
+  //show feedback div
+  document.getElementById("feedback").setAttribute("class", "unhide");
+  //write question title and write question
+  document.getElementById("question-title").textContent =
+    currentQuestionIndex + 1 + currentQuestion.ask;
+  //write button code
+  document.getElementById("choices").innerHTML = buttonquestions;
+  console.log("score: " + score);
 }

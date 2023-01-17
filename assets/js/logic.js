@@ -40,6 +40,8 @@ function correct() {
   score += 1;
   //print correct
   document.getElementById("feedback").textContent = "correct";
+  var audio = new Audio('assets/sfx/correct.wav');
+  audio.play();
   //ask next question
   currentQuestionIndex++;
   if (currentQuestionIndex === 5) {
@@ -55,6 +57,8 @@ function incorrect() {
   secondsLeft -= 7;
   //print incorrect
   document.getElementById("feedback").textContent = "incorrect";
+  var audio = new Audio('assets/sfx/incorrect.wav');
+  audio.play();
   //ask next question
   currentQuestionIndex++;
   if (currentQuestionIndex === 5) {
